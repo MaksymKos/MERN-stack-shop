@@ -35,8 +35,8 @@ const CartPage = () => {
   };
 
   const checkoutHandler = () => {
-    navigate('/login?redirect=/shipping')
-  }
+    navigate("/login?redirect=/shipping");
+  };
 
   return (
     <>
@@ -103,7 +103,7 @@ const CartPage = () => {
                   type="button"
                   className="btn-block"
                   disabled={cartItems.length === 0}
-                  onClick={() => checkoutHandler}
+                  onClick={checkoutHandler}
                 >
                   Proceed To Checkout
                 </Button>
