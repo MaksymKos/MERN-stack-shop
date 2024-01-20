@@ -52,7 +52,7 @@ const PlaceOrderPage = () => {
             <ListGroup.Item>
               <h2>Shipping</h2>
               <p>
-                <strong>Address:</strong>
+                <strong>Address: </strong>
                 {cart.shippingAddress.address}, {cart.shippingAddress.city}{" "}
                 {cart.shippingAddress.postalCode},{" "}
                 {cart.shippingAddress.country}
@@ -74,7 +74,7 @@ const PlaceOrderPage = () => {
                   {cart.cartItems.map((item, index) => (
                     <ListGroup.Item key={index}>
                       <Row>
-                        <Col md={1}>
+                        <Col md={2}>
                           <Image
                             src={item.image}
                             alt={item.name}
@@ -129,11 +129,9 @@ const PlaceOrderPage = () => {
                   <Col>${cart.totalPrice}</Col>
                 </Row>
               </ListGroup.Item>
-              <ListGroup.Item>
-                {error && (
-                  <Message variant="danger">{error.data.message}</Message>
-                )}
-              </ListGroup.Item>
+              {error && (
+                <Message variant="danger">{error.data.message}</Message>
+              )}
               <ListGroup.Item>
                 <Button
                   type="button"
